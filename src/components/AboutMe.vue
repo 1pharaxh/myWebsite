@@ -5,9 +5,9 @@
     :quantity="quantity" 
     :canvasBgColor="canvasBgColor" 
     :effectController="{
-      separation: 50.0,
-      alignment: 30.0,
-      cohesion: 15.0,
+      separation: 20.0,
+      alignment: 20.0,
+      cohesion: 20.0,
       freedom: 1
     }"
   />
