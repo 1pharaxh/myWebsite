@@ -12,7 +12,7 @@
     }"
   />
         <cursor-fx :config="BASE_CONFIG" color='#1DE9B6' color-hover='#FF8A65'/>
-        <div style="text-align:center;z-index:1; padding-top: 15%; padding-bottom: 100px; "  >
+        <div style="text-align:center;z-index:1; padding-top: 15%; "  >
 
            
                         <h1 style="margin:0px">
@@ -35,17 +35,12 @@
                         />
 
         </div>
-        <skills />
-        <projects />
-        <experience />
+
     </v-app>
 </template>
 
 <script>
     import { VueTyper } from 'vue-typer'
-    import skillsVue from './skills.vue';
-    import experienceVue from './experience.vue';
-    import projectsVue from './projects.vue';
     import VueThreejsBirds from 'vue-threejs-birds'
         import { CursorFx } from '@luxdamore/vue-cursor-fx';
     import { defineComponent } from 'vue';
@@ -57,9 +52,6 @@
         },
         components: {
             'vue-typer': VueTyper,
-            'skills': skillsVue,
-            'experience': experienceVue,
-            'projects': projectsVue,
             VueThreejsBirds,
             // 'birds-vue': BirdsVue,
             'cursor-fx': CursorFx,
