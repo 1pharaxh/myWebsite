@@ -1,32 +1,42 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view />
+  <div>
+    <v-content>
+      <about-me />
+    </v-content>
+    <v-app>
+    <section>
+      <skills />
+    </section>
+    <section>
+      <projects />
+    </section>
+    <section>
+      <exp />
+    </section>
+  </v-app>
   </div>
+    
 </template>
 
+<script>
+  import skillsVue from './components/skills.vue';
+  import about from './components/AboutMe.vue';
+  import projectsVue from './components/projects.vue';
+  import experienceVue from './components/experience.vue'
+  export default {
+    components: {
+      'about-me': about,
+      'skills': skillsVue,
+      'projects': projectsVue,
+      'exp' : experienceVue
+    },
+    data() {
+      return {
+      }
+    }
+  }
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
