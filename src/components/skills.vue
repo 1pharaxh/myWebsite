@@ -1,11 +1,12 @@
 <template>
-  <div style="text-align:center; padding-top: 15%;" id="row2">
+    <div>
+  <div style="text-align:center; padding-top: 15%;" >
     <cursor-fx  color='#1DE9B6' color-hover='#FF8A65'/>
-    <h1>
-        <p><span class="text-primary" data-cursor-hover>My<span class="text-secondary" data-cursor-hover>Skills</span></span></p>
+    <h1 style="text-align:right;padding-right:15%">
+        <p><span class="text-primary" data-cursor-hover>My<span class="text-secondary" data-cursor-hover>Skills...</span></span></p>
     </h1>
     <v-divider></v-divider>
-<v-container>
+    <div style="width: 70%; margin:auto">
     <img 
         v-for="(skill, index) in skills" :key="index"
         :ref="skill"
@@ -17,8 +18,10 @@
         @mouseover="shrinkImage(skill)"
         @mouseout="enlargeImage(skill)"
     />
-    </v-container>
+
   </div>
+</div>
+</div>
 </template>
 
 <script>
@@ -71,12 +74,12 @@
 <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
     .img-default-size {
-        height: 100px;
+        height: 110px;
         transition: all 0.4s;
     }
 
     .img-shrunk-size {
-        height: 70px;
+        height: 100px;
         transition: all 0.4s;
     }
     h1{
@@ -97,19 +100,10 @@
         padding-left: 12px;
         color: #009688;
     }
-        #row2 {
-        top:0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        width: 100%;
-        height: 100%;
-    }
     img {
-        margin-left: 10px;
-        margin-right: 10px;
-        max-width: 100px;
-        max-height: 100px;
+        margin-left: 15px;
+        margin-right: 15px;
+        max-width: 110px;
+        max-height: 110px;
     }
 </style>

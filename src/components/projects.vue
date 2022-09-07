@@ -1,14 +1,12 @@
 <template>
-    <div style="text-align:center; padding-top: 15%;" id="row3">
+    <div style="text-align:center; padding-top: 15%;">
       <cursor-fx  color='#1DE9B6' color-hover='#FF8A65'/>
-      <h1>
-          <p><span class="text-primary" data-cursor-hover>My<span class="text-secondary" data-cursor-hover>Projects</span></span></p>
+      <h1 style="text-align:left;padding-left:10%">
+          <p><span class="text-primary" data-cursor-hover>My<span class="text-secondary" data-cursor-hover>Projects...</span></span></p>
       </h1>
       <v-divider></v-divider>
-    <v-container>
-      <v-grid style="text-align:center;">
-        <v-row style="margin:auto;">
-          <v-col v-for="(card, index) in cards" :key="index" style="text-align:center;">
+      <div class="grid-container">
+          <div id="content"  v-for="(card, index) in cards" :key="index" style="text-align:center;">
             <Card data-cursor-hover :title="card.title" myColor="green" 
             :link="card.link" 
             :content="card.content" >
@@ -19,10 +17,8 @@
               {{chip.text}}
             </v-chip>
           </Card>
-          </v-col>
-        </v-row>
-      </v-grid>
-      </v-container>
+        </div>
+        </div>
     </div>
   </template>
   <script>
@@ -111,6 +107,18 @@
         font-family: 'Ubuntu';
         font-style: normal;
     }
+    #content {
+      padding-left: 15%;
+      padding-right:25%
+    }
+    .grid-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto;
+  text-align: center;
+  width: 80%;
+  margin:auto;
+} 
     .text-primary {
         font-weight: 900;
         font-style: normal;
@@ -124,15 +132,6 @@
         margin-left: 12px;
         padding-left: 12px;
         color: #009688;
-    }
-    #row3 {
-        top:0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        width: 100%;
-        height: 100%;
     }
   </style>
   

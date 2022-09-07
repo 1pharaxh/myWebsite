@@ -1,47 +1,83 @@
 <template>
-    <div>
+    <v-app >
+        <vue-threejs-birds  
+        id="birds"
+    :quantity="quantity" 
+    :canvasBgColor="canvasBgColor" 
+    :effectController="{
+      separation: 50.0,
+      alignment: 30.0,
+      cohesion: 15.0,
+      freedom: 1
+    }"
+  />
         <cursor-fx :config="BASE_CONFIG" color='#1DE9B6' color-hover='#FF8A65'/>
-        <birds-vue/>
-        <div id="row">
-            <div style="text-align:center; padding-top: 15%;">
-                <h1>
-                    <p class="text-primary"><span data-cursor-hover>Akarshan</span></p>
-                    <p class="text-secondary" ><span data-cursor-hover>Mishra</span></p>
-                </h1>
-                <vue-typer
-                data-cursor-hover
-                :text='["Full Stack Developer", "Designer", "Freelancer"]'
-                :repeat='Infinity'
-                :shuffle='false'
-                initial-action='typing'
-                :pre-type-delay='70'
-                :type-delay='70'
-                :pre-erase-delay='2000'
-                :erase-delay='250'
-                erase-style='select-back'
-                :erase-on-complete='false'
-                caret-animation='phase'
-                />
-            </div>
+        <div style="text-align:center;z-index:1; padding-top: 15%; padding-bottom: 100px; "  >
+
+           
+                        <h1 style="margin:0px">
+                            <p style="margin:0px"><span data-cursor-hover style="margin:0px">Akarshan</span></p>
+                            <p style="margin:0px" ><span data-cursor-hover >Mishra</span></p>
+                        </h1>
+                        <vue-typer
+                            data-cursor-hover
+                            :text='["Full Stack Developer", "Designer", "Freelancer"]'
+                            :repeat='Infinity'
+                            :shuffle='false'
+                            initial-action='typing'
+                            :pre-type-delay='70'
+                            :type-delay='70'
+                            :pre-erase-delay='2000'
+                            :erase-delay='250'
+                            erase-style='select-back'
+                            :erase-on-complete='false'
+                            caret-animation='phase'
+                        />
+
         </div>
-    </div>
+        <skills />
+        <projects />
+        <experience />
+    </v-app>
 </template>
 
 <script>
     import { VueTyper } from 'vue-typer'
-    import BirdsVue from './core/Birds.vue'
-    import { CursorFx } from '@luxdamore/vue-cursor-fx';
+    import skillsVue from './skills.vue';
+    import experienceVue from './experience.vue';
+    import projectsVue from './projects.vue';
+    import VueThreejsBirds from 'vue-threejs-birds'
+        import { CursorFx } from '@luxdamore/vue-cursor-fx';
     import { defineComponent } from 'vue';
     export default defineComponent({
         mounted() {
             // The point of this is to figure out the appropriate CSS for each display size
             // alert(this.$vuetify.breakpoint.name)
+            window.addEventListener('resize', this.handleResize)
         },
         components: {
             'vue-typer': VueTyper,
-            'birds-vue': BirdsVue,
+            'skills': skillsVue,
+            'experience': experienceVue,
+            'projects': projectsVue,
+            VueThreejsBirds,
+            // 'birds-vue': BirdsVue,
             'cursor-fx': CursorFx,
         },
+        methods: {
+        handleResize() {
+          const windowSize = {
+            width: window.screen.availWidth,
+            height: window.screen.availHeight
+            
+          }
+          console.log(window)
+          this.$root.$emit('resized', windowSize)
+        }
+      },
+      beforeDestroy() {
+        window.removeEventListener('resize', this.handleResize)
+      },
         data () {
             const BASE_CONFIG = {
                 lerps: {
@@ -58,6 +94,8 @@
             };
             return {
                 BASE_CONFIG,
+                quantity: 4,
+          canvasBgColor: "#fff"
             }
         }
     })
@@ -96,7 +134,8 @@
 }
 .text-secondary {
     padding-left:75px;
-    padding-bottom: 15px;
+    padding-top: 0px;
+    padding-bottom: 5px;
 }
 h1 > p {
     font-family: 'Ubuntu';
@@ -105,14 +144,6 @@ h1 > p {
   color:#009688;
     font-size: 5rem;
 }
-#row {
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-}
+
 
 </style>

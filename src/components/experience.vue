@@ -1,11 +1,10 @@
 <template>
-          <div style="text-align:center; padding-top: 15%;" id="row2">
+          <div style="text-align:center; padding-top: 15%;">
     <cursor-fx  color='#1DE9B6' color-hover='#FF8A65'/>
-    <h1>
+    <h1 style="text-align:right;padding-right:13%">
         <p><span class="text-primary" data-cursor-hover>My<span class="text-secondary" data-cursor-hover>Experience</span></span></p>
     </h1>
     <v-divider></v-divider>
-        <v-container>
     <v-timeline>
       <v-timeline-item
         v-for="(year, i) in years"
@@ -29,7 +28,6 @@
         </div>
       </v-timeline-item>
     </v-timeline>
-</v-container>
 </div>
   </template>
   
