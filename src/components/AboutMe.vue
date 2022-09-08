@@ -1,6 +1,6 @@
 <template>
     <v-app >
-        <vue-threejs-birds  
+        <vue-threejs-birds
         id="birds"
     :quantity="quantity" 
     :canvasBgColor="canvasBgColor" 
