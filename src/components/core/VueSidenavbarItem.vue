@@ -52,13 +52,13 @@
     left: 0;
     text-decoration: none;
     font-size: 15px;
-    background: var(--sidebaritem-bgcolor, #3e4e62);
+    /* background: var(--sidebaritem-bgcolor, #3e4e62); */
     color: white;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
-  .sidenav__link:hover {
+  /* .sidenav__link:hover {
     background: var(--sidebaritem-hover-bgcolor, #8c2f39);
-  }
+  } */
   .sidenav__link i {
     font-size: 44px;
   }
