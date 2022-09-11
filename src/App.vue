@@ -21,16 +21,16 @@
         </svg>
     </div>
     <ul class="list-items">
-      <li data-cursor-hover class="li2 li" @click="scrollTo('skills')"><a >skills</a></li>
-      <li data-cursor-hover class="li3 li" @click="scrollTo('projects')"><a >projects</a></li>
-      <li data-cursor-hover class="li4 li" @click="scrollTo('experience')"><a >experience</a></li>
-      <li data-cursor-hover class="li4 li" ><a href="https://docs.google.com/document/d/1IPAktbFm57QjJSAWZYHMPRrtYsPlLtfH734NLS8iLbc/edit?usp=sharing" >Resume</a></li>
+      <li data-cursor-hover class="li2 li" @click="scrollTo('skills')"><a style="cursor:none">skills</a></li>
+      <li data-cursor-hover class="li3 li" @click="scrollTo('projects')"><a style="cursor:none">projects</a></li>
+      <li data-cursor-hover class="li4 li" @click="scrollTo('experience')"><a style="cursor:none">experience</a></li>
+      <li data-cursor-hover class="li4 li" ><a style="cursor:none" href="https://docs.google.com/document/d/1IPAktbFm57QjJSAWZYHMPRrtYsPlLtfH734NLS8iLbc/edit?usp=sharing" >Resume</a></li>
     </ul>
     <div class="social">
       <ul>
-        <li data-cursor-hover class="social-li"><a href='https://www.linkedin.com/in/akarshan-mishra-75577122a/'>linkedIn</a></li>
-        <li data-cursor-hover class="social-li"><a href='https://github.com/1pharaxh'>GitHub</a></li>
-        <li data-cursor-hover class="social-li"><a href="mailto:akarshan@ualberta.ca">Email</a></li>
+        <li data-cursor-hover class="social-li"><a style="cursor:none" href='https://www.linkedin.com/in/akarshan-mishra-75577122a/'>linkedIn</a></li>
+        <li data-cursor-hover class="social-li"><a style="cursor:none" href='https://github.com/1pharaxh'>GitHub</a></li>
+        <li data-cursor-hover class="social-li"><a style="cursor:none" href="mailto:akarshan@ualberta.ca">Email</a></li>
       </ul>
     </div>
   </div>
@@ -51,7 +51,6 @@
   import { gsap, Expo } from 'gsap';
   import skillsVue from './components/skills.vue';
   import { CursorFx } from '@luxdamore/vue-cursor-fx';
-
   import about from './components/AboutMe.vue';
   import projectsVue from './components/projects.vue';
   import contactMeVue from './components/ContactMe.vue';

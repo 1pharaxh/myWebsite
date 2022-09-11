@@ -10,9 +10,9 @@
             <Card data-cursor-hover :title="card.title" myColor="green" 
             :link="card.link" 
             :content="card.content" >
-            <v-chip style="padding-right:5px; margin-bottom:10px; margin-right:10px" v-for='(chip, index) in card.chips' :key="index" pill outlined class="ma-2" color="success">
+            <v-chip style="padding-right:5px; margin-bottom:10px; margin-right:10px" v-for='(chip, index) in card.chips' :key="index" @click="handleClick(chip.src)" pill outlined class="ma-2" color="success">
               <v-avatar left style="padding-left: 10px">
-                <v-img :src='"./../../public/assets/logos/"+chip.src + ".svg"'/>
+                <img :src='"./../../public/assets/logos/"+chip.src + ".svg"'   />
               </v-avatar>
               {{chip.text}}
             </v-chip>
@@ -103,6 +103,36 @@
         }
       },
       methods: {
+        handleClick(link) {
+                const linkMap = {
+                    'arduino': 'https://www.arduino.cc/',
+                'bash' : 'https://www.gnu.org/software/bash/',
+                'bootstrap' : 'https://getbootstrap.com/',
+                'capacitorjs-cropped' : 'https://capacitorjs.com/',
+                'cordova-cropped' : 'https://cordova.apache.org/',
+                'cpp-cropped' : 'https://www.cplusplus.com/',
+                'css-cropped': 'https://www.w3.org/Style/CSS/Overview.en.html',
+                'expressjs-cropped' : 'https://expressjs.com/',
+                'firebase-cropped': 'https://firebase.google.com/',
+                'flask-cropped': 'https://flask.palletsprojects.com/en/1.1.x/',
+                'gsap-greensock-cropped' : 'https://greensock.com/gsap/',
+                'html-cropped' : 'https://www.w3.org/html/',
+                'javascript-cropped' : 'https://www.javascript.com/',
+                'linux-tux-cropped' : 'https://www.linux.org/',
+                'mongodb-cropped' : 'https://www.mongodb.com/',
+                'nodejs-cropped': 'https://nodejs.org/en/',
+                'photoshop-cropped' : 'https://www.adobe.com/ca/products/photoshop.html',
+                'postman-cropped': 'https://www.postman.com/',
+                'python-cropped' : 'https://www.python.org/',
+                'raspberrypi-cropped' : 'https://www.raspberrypi.org/',
+                'tensorflow-cropped': 'https://www.tensorflow.org/',
+                'threejs-cropped': 'https://threejs.org/',
+                'typescript-cropped': 'https://www.typescriptlang.org/',
+                'vuejs-cropped': 'https://vuejs.org/',
+                'vuetify-cropped' : 'https://vuetifyjs.com/en/',
+                }
+                window.open(linkMap[link]);
+            },
       }
     })
   </script>
