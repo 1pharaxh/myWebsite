@@ -112,7 +112,8 @@
     color: #009688;
 }
 .vue-typer .custom.char.selected {
-    color: #E91E63;
+    /* COLOR FOR CHAR */
+    /* color: #E91E63; */
 }
 
 .vue-typer .custom.caret {
