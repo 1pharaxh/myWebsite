@@ -17,7 +17,7 @@
            
                         <h1 style="margin:0px">
                             <p style="margin:0px"><span data-cursor-hover style="margin:0px">Akarshan</span></p>
-                            <p style="margin:0px" ><span data-cursor-hover >Mishra</span></p>
+                            <p style="margin:0px; padding-left: 90px;" ><span data-cursor-hover >Mishra</span></p>
                         </h1>
                         <vue-typer
                             data-cursor-hover
