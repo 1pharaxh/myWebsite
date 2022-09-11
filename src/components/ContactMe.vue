@@ -22,7 +22,7 @@
                     aria-hidden="true"
                     class="contact__email__row__text"
                 >
-                    Send me an <span style="color:green" class="serif">email</span
+                    Send me an <span style="color:#009688" class="serif">email</span
                     ><span v-if="textKey !== textCount">&nbsp; - &nbsp;</span>
                 </span>
             </span>
@@ -86,7 +86,7 @@ export default {
             display: block;
             margin: 0;
             @supports (-webkit-text-stroke: 1px white) {
-                -webkit-text-stroke: 1px darken($color: green, $amount: 10);
+                -webkit-text-stroke: 1.2px darken($color: #8CF2D8, $amount: 10);
                 color: transparent;
             }
         }
