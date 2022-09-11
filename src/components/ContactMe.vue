@@ -7,7 +7,7 @@
             rel="noopener"
             class="contact__email"
         >
-            <span class="sr-only" > Send me an email </span>
+            <!-- <span class="sr-only" > Send me an email </span> -->
             <span
                 v-for="row in 3"
                 :key="row"
@@ -22,7 +22,7 @@
                     aria-hidden="true"
                     class="contact__email__row__text"
                 >
-                    Send me an <span style="color:#009688" class="serif">email</span
+                    Send me an <span style="color:#009688" class="serif">email🔰</span
                     ><span v-if="textKey !== textCount">&nbsp; - &nbsp;</span>
                 </span>
             </span>

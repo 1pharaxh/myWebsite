@@ -9,6 +9,7 @@
       <exp id="experience" />
       <contact-me />
     </v-main>
+    <footer-vue />
   </v-app>
   </div>
     
@@ -21,6 +22,7 @@
   import projectsVue from './components/projects.vue';
   import contactMeVue from './components/ContactMe.vue';
   import experienceVue from './components/experience.vue'
+  import footerVue from './components/FooterVue.vue'
   export default {
     components: {
       'side-bar': SideBarVue,
@@ -28,7 +30,8 @@
       'skills': skillsVue,
       'projects': projectsVue,
       'exp' : experienceVue,
-      'contact-me': contactMeVue
+      'contact-me': contactMeVue,
+      'footer-vue': footerVue
     },
     data() {
       return {
