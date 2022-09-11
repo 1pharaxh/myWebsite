@@ -209,7 +209,7 @@
       stroke-linejoin: round;
       width: 40px;
       height: 40px;
-      cursor: pointer;
+      cursor: none;
       transition: all .3s ease-in-out;
       &:hover {
           stroke: #8CF2D8;
@@ -223,7 +223,7 @@
       stroke-linejoin: round;
       width: 40px;
       height: 40px;
-      cursor: pointer;
+      cursor: none;
       transition: all .3s ease-in-out;
       &:hover {
           stroke: red;
@@ -248,7 +248,7 @@
     font-size: 15px;
     font-weight: 500;
     z-index: 100;
-    cursor: pointer;
+    cursor: none;
   }
   
   .menu {
