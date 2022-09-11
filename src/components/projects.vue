@@ -41,6 +41,10 @@
                 text: 'Vue.js'
               },
               {
+                src: 'gsap-greensock-cropped',
+                text: 'GSAP'
+              },
+              {
                 src:'vuetify-cropped',
                 text: 'Vuetify'
               },

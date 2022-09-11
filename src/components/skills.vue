@@ -14,7 +14,8 @@
         :src='"./../../public/assets/logos/"+skill+".svg"'
         :class="{
             'img-default-size': true,
-        }" 
+        }"
+        @click="handleClick(skill)" 
         @mouseover="shrinkImage(skill)"
         @mouseout="enlargeImage(skill)"
     />
@@ -42,6 +43,7 @@
                 'expressjs-cropped',
                 'firebase-cropped',
                 'flask-cropped',
+                'gsap-greensock-cropped',
                 'html-cropped',
                 'javascript-cropped',
                 'linux-tux-cropped',
@@ -60,6 +62,36 @@
                 return {imageShrunk: false, skills}
             },
         methods: {
+            handleClick(link) {
+                const linkMap = {
+                    'arduino': 'https://www.arduino.cc/',
+                'bash' : 'https://www.gnu.org/software/bash/',
+                'bootstrap' : 'https://getbootstrap.com/',
+                'capacitorjs-cropped' : 'https://capacitorjs.com/',
+                'cordova-cropped' : 'https://cordova.apache.org/',
+                'cpp-cropped' : 'https://www.cplusplus.com/',
+                'css-cropped': 'https://www.w3.org/Style/CSS/Overview.en.html',
+                'expressjs-cropped' : 'https://expressjs.com/',
+                'firebase-cropped': 'https://firebase.google.com/',
+                'flask-cropped': 'https://flask.palletsprojects.com/en/1.1.x/',
+                'gsap-greensock-cropped' : 'https://greensock.com/gsap/',
+                'html-cropped' : 'https://www.w3.org/html/',
+                'javascript-cropped' : 'https://www.javascript.com/',
+                'linux-tux-cropped' : 'https://www.linux.org/',
+                'mongodb-cropped' : 'https://www.mongodb.com/',
+                'nodejs-cropped': 'https://nodejs.org/en/',
+                'photoshop-cropped' : 'https://www.adobe.com/ca/products/photoshop.html',
+                'postman-cropped': 'https://www.postman.com/',
+                'python-cropped' : 'https://www.python.org/',
+                'raspberrypi-cropped' : 'https://www.raspberrypi.org/',
+                'tensorflow-cropped': 'https://www.tensorflow.org/',
+                'threejs-cropped': 'https://threejs.org/',
+                'typescript-cropped': 'https://www.typescriptlang.org/',
+                'vuejs-cropped': 'https://vuejs.org/',
+                'vuetify-cropped' : 'https://vuetifyjs.com/en/',
+                }
+                window.open(linkMap[link]);
+            },
             enlargeImage(skill) {
                 this.$refs[skill][0].classList.remove('img-shrunk-size');
             },
