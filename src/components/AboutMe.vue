@@ -11,7 +11,7 @@
       freedom: 1
     }"
   />
-        <cursor-fx :config="BASE_CONFIG" color='#1DE9B6' color-hover='#FF8A65'/>
+        <!-- <cursor-fx :config="BASE_CONFIG" color='#1DE9B6' color-hover='#FF8A65'/> -->
         <div style="text-align:center;z-index:1; padding-top: 15%; "  >
 
            
@@ -42,7 +42,6 @@
 <script>
     import { VueTyper } from 'vue-typer'
     import VueThreejsBirds from 'vue-threejs-birds'
-        import { CursorFx } from '@luxdamore/vue-cursor-fx';
     import { defineComponent } from 'vue';
     export default defineComponent({
         mounted() {
@@ -53,8 +52,6 @@
         components: {
             'vue-typer': VueTyper,
             VueThreejsBirds,
-            // 'birds-vue': BirdsVue,
-            'cursor-fx': CursorFx,
         },
         methods: {
         handleResize() {
@@ -63,7 +60,6 @@
             height: window.screen.availHeight
             
           }
-          console.log(window)
           this.$root.$emit('resized', windowSize)
         }
       },
@@ -94,7 +90,6 @@
 </script>
 
 <style >
-    @import "@luxdamore/vue-cursor-fx/dist/CursorFx.css";
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @keyframes rocking {
   0%,100% {transform: rotateZ(-10deg);}

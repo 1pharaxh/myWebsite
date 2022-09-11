@@ -1,6 +1,6 @@
 <template>
           <div style="text-align:center; padding-top: 15%;">
-    <cursor-fx  color='#1DE9B6' color-hover='#FF8A65'/>
+    <!-- <cursor-fx  color='#1DE9B6' color-hover='#FF8A65'/> -->
     <h1 style="text-align:right;padding-right:13%">
         <p><span class="text-primary" data-cursor-hover>My<span class="text-secondary" data-cursor-hover>Experience...</span></span></p>
     </h1>
@@ -20,7 +20,7 @@
           ></span>
         </template>
         <div class="py-4">
-          <h2 :class="`headline font-weight-light mb-4 ${year.color}--text`">
+          <h2 :class="`headline font-weight-light mb-4 ${year.color}--text`" data-cursor-hover>
             {{year.title}}
           </h2>
           <div>

@@ -1,8 +1,7 @@
 <template>
-    <section ref="contact" class="contact" data-scroll-section>
+    <section ref="contact" class="contact" data-scroll-section data-cursor-hover>
         <a
             ref="contactEmail"
-            v-hoverable
             href="mailto:akarshan@ualberta.ca"
             rel="noopener"
             class="contact__email"

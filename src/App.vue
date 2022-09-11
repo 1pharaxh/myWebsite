@@ -1,10 +1,11 @@
 <template>
   <div>
+    <cursor-fx :config="BASE_CONFIG" color='#1DE9B6' color-hover='#FF8A65'/>
     <v-app>
     <v-main>
       <div>
     <div id="contain" class="container">
-    <div class="button" style="position:fixed; z-index:100">
+    <div class="button" style="position:fixed; z-index:100" data-cursor-hover>
         <svg viewBox="0 0 12 10" class="hamburger" height="40px" width="40px">
             <path d="M10,2 L2,2" class="bar-1" ></path>
             <path d="M2,5 L10,5" class="bar-2"></path>
@@ -13,24 +14,23 @@
     </div>
   </div>
   <div class="menu">
-    <div class="button">
+    <div class="button" data-cursor-hover>
         <svg viewBox="0 0 12 10" class="cross" height="40px" width="40px">
             <path d="M8,2 L2,8" class="bar-1"></path>
             <path d="M8,8 L2,2" class="bar-3"></path>
         </svg>
     </div>
     <ul class="list-items">
-      <li class="li1 li" @click="scrollTo('home')"><a>home</a></li>
-      <li class="li2 li" @click="scrollTo('skills')"><a >skills</a></li>
-      <li class="li3 li" @click="scrollTo('projects')"><a >projects</a></li>
-      <li class="li4 li" @click="scrollTo('experience')"><a >experience</a></li>
-      <li class="li4 li" ><a href="https://docs.google.com/document/d/1IPAktbFm57QjJSAWZYHMPRrtYsPlLtfH734NLS8iLbc/edit?usp=sharing" >Resume</a></li>
+      <li data-cursor-hover class="li2 li" @click="scrollTo('skills')"><a >skills</a></li>
+      <li data-cursor-hover class="li3 li" @click="scrollTo('projects')"><a >projects</a></li>
+      <li data-cursor-hover class="li4 li" @click="scrollTo('experience')"><a >experience</a></li>
+      <li data-cursor-hover class="li4 li" ><a href="https://docs.google.com/document/d/1IPAktbFm57QjJSAWZYHMPRrtYsPlLtfH734NLS8iLbc/edit?usp=sharing" >Resume</a></li>
     </ul>
     <div class="social">
       <ul>
-        <li class="social-li"><a href='https://www.linkedin.com/in/akarshan-mishra-75577122a/'>linkedIn</a></li>
-        <li class="social-li"><a href='https://github.com/1pharaxh'>GitHub</a></li>
-        <li class="social-li"><a href="mailto:akarshan@ualberta.ca">Email</a></li>
+        <li data-cursor-hover class="social-li"><a href='https://www.linkedin.com/in/akarshan-mishra-75577122a/'>linkedIn</a></li>
+        <li data-cursor-hover class="social-li"><a href='https://github.com/1pharaxh'>GitHub</a></li>
+        <li data-cursor-hover class="social-li"><a href="mailto:akarshan@ualberta.ca">Email</a></li>
       </ul>
     </div>
   </div>
@@ -50,6 +50,8 @@
 <script>
   import { gsap, Expo } from 'gsap';
   import skillsVue from './components/skills.vue';
+  import { CursorFx } from '@luxdamore/vue-cursor-fx';
+
   import about from './components/AboutMe.vue';
   import projectsVue from './components/projects.vue';
   import contactMeVue from './components/ContactMe.vue';
@@ -57,6 +59,7 @@
   import footerVue from './components/FooterVue.vue'
   export default {
     components: {
+      'cursor-fx': CursorFx,
       'about-me': about,
       'skills': skillsVue,
       'projects': projectsVue,
@@ -64,7 +67,24 @@
       'contact-me': contactMeVue,
       'footer-vue': footerVue
     },
-    data :() =>({}),
+    data () {
+      const BASE_CONFIG = {
+                lerps: {
+                    dot: 1,
+                    circle: 0.18,
+                    custom: 0.23,
+                },
+                scale: {
+                    ratio: 0.18,
+                    min: 0.7,
+                    max: 1,
+                },
+                opacity: 0.1,
+            };
+            return {
+                BASE_CONFIG,
+            }
+    },
     methods: {
         scrollTo(el) {
             document.getElementById(el).scrollIntoView({ behavior: 'smooth' });
@@ -122,13 +142,65 @@
   }
   
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
-  
+  // @import "@luxdamore/vue-cursor-fx/dist/CursorFx.css";
   body {
     margin: 0;
     overflow: hidden;
     font-family: 'Open Sans', sans-serif;
     
   }
+
+
+  .cursor-fx{
+    opacity:0
+}
+.is-cursor-fx-active,.is-cursor-fx-active *{
+    cursor:none
+}
+.is-cursor-fx-active .cursor-fx{
+    transition-delay:.3s
+}
+.is-cursor-fx-active .cursor-fx.cursor-fx--loaded{
+    opacity:1
+}
+.cursor-fx[data-v-f3f73494]{
+    color:var(--color,#333);
+    transition:color .18s ease-in-out,opacity .6s ease-in-out
+}
+.cursor-fx--hover[data-v-f3f73494]{
+    color:var(--color-hover,#333)
+}
+.cursor-fx__inner[data-v-f3f73494]{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:999!important;
+    border-radius:100%;
+    transition-timing-function:ease;
+    transition-duration:.23s;
+    transition-property:color,width,height,background-color,border-radius,border-color;
+    pointer-events:none;
+    will-change:auto
+}
+.cursor-fx__inner__outside[data-v-f3f73494]{
+    border:3px solid
+}
+.cursor-fx__inner__custom[data-v-f3f73494],.cursor-fx__inner__outside[data-v-f3f73494]{
+    width:64px;
+    height:64px
+}
+.cursor-fx__inner__inside[data-v-f3f73494]{
+    width:6px;
+    height:6px;
+    background-color:currentColor
+}
+.cursor-fx--shape-square>.cursor-fx__inner[data-v-f3f73494]{
+    border-radius:0
+}
+
+
+
+
   .hamburger {
       fill: none;
       stroke: #6FCA62;

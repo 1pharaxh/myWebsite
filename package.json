@@ -20,9 +20,6 @@
     "popper.js": "^1.16.1",
     "portal-vue": "^2.1.7",
     "vue": "^2.6.14",
-    "vue-baraja-js": "^0.0.5",
-    "vue-sidebar-menu": "^4.8.1",
-    "vue-sidenavbar": "^1.0.4",
     "vue-threejs-birds": "^0.6.9",
     "vue-typer": "^1.2.0",
     "vuetify": "^2.6.0"

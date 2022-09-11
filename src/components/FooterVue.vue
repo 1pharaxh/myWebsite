@@ -3,7 +3,7 @@
         <v-card style="width:100vw" flat tile>
             <v-card-title class="teal justify-center" >
                 <v-btn v-for="(icon, index) in icons" :key="index" class="mx-4" dark icon :href="icon.link">
-                <v-icon size="24px">
+                <v-icon size="24px" data-cursor-hover>
                     {{ icon.icn }}
                 </v-icon>
                 </v-btn>
