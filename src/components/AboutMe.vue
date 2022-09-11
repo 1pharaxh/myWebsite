@@ -16,12 +16,15 @@
 
            
                         <h1 style="margin:0px">
+                            <p style="font-size:2rem;color:#8CF2D8;margin:0;padding:0">Hi, my name is </p>
                             <p style="margin:0px"><span data-cursor-hover style="margin:0px">Akarshan</span></p>
                             <p style="margin:0px; padding-left: 90px;" ><span data-cursor-hover >Mishra</span></p>
                         </h1>
+                        <h1>
+                        <p style="font-size:3rem;color:#8CF2D8;margin:0;padding:0">I am a
                         <vue-typer
                             data-cursor-hover
-                            :text='["Full Stack Developer", "Designer", "Freelancer"]'
+                            :text='["Full Stack Developer", "Designer", "Developer"]'
                             :repeat='Infinity'
                             :shuffle='false'
                             initial-action='typing'
@@ -33,6 +36,9 @@
                             :erase-on-complete='false'
                             caret-animation='phase'
                         />
+                    </p>
+                        </h1>
+                        
 
         </div>
 
