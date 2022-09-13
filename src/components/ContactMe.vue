@@ -8,7 +8,7 @@
         >
             <!-- <span class="sr-only" > Send me an email </span> -->
             <span
-                v-for="row in 3"
+                v-for="row in numRows"
                 :key="row"
                 ref="contactEmailRow"
                 aria-hidden="true"
@@ -32,9 +32,24 @@
 <script>
     import { gsap } from 'gsap';
 export default {
-    data: () => ({ textCount: 4 }),
+    data: () => ({ textCount: 4, numRows: 4 }),
     mounted() {
         const { contact, contactEmailRow } = this.$refs;
+        if (this.$vuetify.breakpoint.name === 'sm' || this.$vuetify.breakpoint.name === 'xs') {
+            var arr = document.getElementsByClassName('contact__email__row__text')
+            for (let i in arr) {
+                if (arr[i].style) {
+                    arr[i].style.fontSize = '2rem'
+                }
+            }
+            for (let i in document.getElementsByClassName('contact__email__row')) {
+                if(document.getElementsByClassName('contact__email__row')[i].style){
+                    document.getElementsByClassName('contact__email__row')[i].style.lineHeight = '0.3'
+                }
+            }
+            console.log(document.getElementsByClassName('contact__email').style)
+            document.getElementsByClassName('contact__email')[0].style.padding = '0'
+        }
         gsap.fromTo(
             contactEmailRow,
             { yPercent: 'random(-15, -20)' },

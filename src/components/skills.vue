@@ -2,10 +2,11 @@
     <div>
   <div style="text-align:center; padding-top: 15%;" >
     <!-- <cursor-fx  color='#1DE9B6' color-hover='#FF8A65'/> -->
-    <h1 style="text-align:right;padding-right:15%">
-        <p><span class="text-primary" data-cursor-hover>My<span class="text-secondary" data-cursor-hover>Skills...</span></span></p>
+    <h1 class="header">
+        <p><span class="prime" data-cursor-hover>My<span class="second skills" data-cursor-hover>Skills...</span></span></p>
     </h1>
     <v-divider></v-divider>
+    <br/>
     <div style="width: 70%; margin:auto">
     <img 
         v-for="(skill, index) in skills" :key="index"
@@ -30,6 +31,20 @@
     export default defineComponent({
         name: 'SkillsVue',
         components: {
+        },
+        mounted() {
+            if (this.$vuetify.breakpoint.name === 'sm' || this.$vuetify.breakpoint.name === 'xs') {
+                document.getElementsByClassName('header')[0].style.fontSize = '3rem'
+                document.getElementsByClassName('skills')[0].innerHTML = 'Skills'
+                document.getElementsByClassName('header')[0].style.paddingLeft = '4rem'
+                var arr = document.getElementsByClassName('img-default-size')
+                for (let i in arr) {
+                    if (arr[i].style) {
+                        arr[i].style.width = '50px'
+                        arr[i].style.height = '50px'
+                    }
+                }
+            }
         },
         data () {
             const skills = [
@@ -118,14 +133,14 @@
         font-family: 'Ubuntu';
         font-style: normal;
     }
-    .text-primary {
+    .prime {
         font-weight: 900;
         font-style: normal;
         color: #8CF2D8;
         margin-right: 12px;
         padding-right: 12px;
     }
-    .text-secondary{
+    .second{
         font-weight: 900;
         font-style: normal;
         margin-left: 12px;
@@ -137,5 +152,10 @@
         margin-right: 15px;
         max-width: 110px;
         max-height: 110px;
+    }
+    .header{
+        font-size: 5rem;
+        text-align:right;
+        padding-right:15%
     }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <v-app >
+    <v-app style="display:block" >
         <vue-threejs-birds
         id="birds"
     :quantity="quantity" 
@@ -12,19 +12,17 @@
     }"
   />
         <!-- <cursor-fx :config="BASE_CONFIG" color='#1DE9B6' color-hover='#FF8A65'/> -->
-        <div style="text-align:center;z-index:1; padding-top: 15%; "  >
-
-           
-                        <h1 style="margin:0px">
-                            <p style="font-size:2rem;color:#8CF2D8;margin:0;padding:0">Hi, my name is </p>
-                            <p style="margin:0px"><span data-cursor-hover style="margin:0px">Akarshan</span></p>
-                            <p style="margin:0px; padding-left: 90px;" ><span data-cursor-hover >Mishra</span></p>
+        <div class="mainContainer" style="margin:auto 0px">
+                        <h1 style="margin:0px" class="primary-text">
+                            <p class="upperText" >Hi, my name is </p>
+                            <p style="margin:0px;line-height: normal;"><span data-cursor-hover style="margin:0px">Akarshan</span></p>
+                            <p style="margin:0px; padding-left: 90px;line-height: normal;" ><span data-cursor-hover >Mishra</span></p>
                         </h1>
                         <h1>
-                        <p style="font-size:3rem;color:#8CF2D8;margin:0;padding:0">I am a
+                        <p class="bottomText">I am a
                         <vue-typer
                             data-cursor-hover
-                            :text='["Full Stack Developer", "Designer", "Developer"]'
+                            :text='["Web Developer", "Designer", "Developer"]'
                             :repeat='Infinity'
                             :shuffle='false'
                             initial-action='typing'
@@ -54,6 +52,14 @@
             // The point of this is to figure out the appropriate CSS for each display size
             // alert(this.$vuetify.breakpoint.name)
             window.addEventListener('resize', this.handleResize)
+            if (this.$vuetify.breakpoint.name === 'sm' || this.$vuetify.breakpoint.name === 'xs') {
+                document.getElementsByClassName('vue-typer')[0].style.fontSize = '2rem'
+                document.getElementsByClassName('primary-text')[0].style.fontSize = '3.5rem'
+                document.getElementsByClassName('bottomText')[0].style.fontSize = '2rem'
+                document.getElementsByClassName('upperText')[0].style.fontSize = '2rem'
+                // document.getElementsByClassName('mainContainer')[0].style.paddingTop = '50%'
+                document.getElementsByClassName('mainContainer')[0].style.marginRight = '5%'
+            } 
         },
         components: {
             'vue-typer': VueTyper,
@@ -131,13 +137,22 @@
     padding-top: 0px;
     padding-bottom: 5px;
 }
-h1 > p {
+.primary-text {
     font-family: 'Ubuntu';
     font-style: normal;
   font-weight: 900;
   color:#009688;
+  line-height: normal;
     font-size: 5rem;
 }
-
+.bottomText {
+    font-size:3rem;color:#8CF2D8;margin:0;padding:0
+}
+.upperText {
+    font-size:2rem;color:#8CF2D8;margin:0;padding:0;
+}
+.mainContainer {
+    text-align:center;z-index:1;
+}
 
 </style>

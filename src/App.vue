@@ -21,10 +21,10 @@
         </svg>
     </div>
     <ul class="list-items">
-      <li data-cursor-hover class="li2 li" @click="scrollTo('skills')"><a style="cursor:none">skills</a></li>
-      <li data-cursor-hover class="li3 li" @click="scrollTo('projects')"><a style="cursor:none">projects</a></li>
-      <li data-cursor-hover class="li4 li" @click="scrollTo('experience')"><a style="cursor:none">experience</a></li>
-      <li data-cursor-hover class="li4 li" ><a style="cursor:none" href="https://docs.google.com/document/d/1IPAktbFm57QjJSAWZYHMPRrtYsPlLtfH734NLS8iLbc/edit?usp=sharing" >Resume</a></li>
+      <li data-cursor-hover class="li2 li" @click="scrollTo('skills')"><a class="text1" style="cursor:none">skills</a></li>
+      <li data-cursor-hover class="li3 li" @click="scrollTo('projects')"><a class="text1" style="cursor:none">projects</a></li>
+      <li data-cursor-hover class="li4 li" @click="scrollTo('experience')"><a class="text1" style="cursor:none">experience</a></li>
+      <li data-cursor-hover class="li5 li" ><a class="text1" style="cursor:none" href="https://docs.google.com/document/d/1IPAktbFm57QjJSAWZYHMPRrtYsPlLtfH734NLS8iLbc/edit?usp=sharing" >Resume</a></li>
     </ul>
     <div class="social">
       <ul>
@@ -90,6 +90,24 @@
         }
     },
     mounted() {
+      if (this.$vuetify.breakpoint.name === 'sm' || this.$vuetify.breakpoint.name === 'xs') { 
+        // document.documentElement.style.overflow = 'hidden'
+        var arr = document.getElementsByClassName('button')
+        for (let i in arr) {
+          if (arr[i].style){
+            arr[i].style.top = '20px'
+            arr[i].style.right = '20px'
+          }
+        }
+        var arr2 = document.getElementsByClassName('text1')
+        for(let i in arr2) {
+          if (arr2[i].style) {
+            arr2[i].style.fontSize = '2rem'
+          }
+        }
+        document.getElementsByClassName('list-items')[0].style.top = '0px'
+        document.getElementsByClassName('social-li')[2].style.margin = '0'
+      }
         var btns = Array.from(document.querySelectorAll('.button'));
         var tl = gsap.timeline({paused: "true"});
         tl.to('.menu', {

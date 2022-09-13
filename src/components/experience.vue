@@ -1,12 +1,12 @@
 <template>
           <div style="text-align:center; padding-top: 15%;">
     <!-- <cursor-fx  color='#1DE9B6' color-hover='#FF8A65'/> -->
-    <h1 style="text-align:right;padding-right:13%">
-        <p><span class="text-primary" data-cursor-hover>My<span class="text-secondary" data-cursor-hover>Experience...</span></span></p>
+    <h1 class="mainHeader">
+        <p><span class="prima" data-cursor-hover>My<span class="seconda" data-cursor-hover>Experience...</span></span></p>
     </h1>
     <v-divider></v-divider>
-    <div style="margin: 0px 100px">
-    <v-timeline >
+    <div class="divWidth">
+    <v-timeline v-if="isRenderTimeline1" >
       <v-timeline-item
         v-for="(year, i) in years"
         :key="i"
@@ -37,6 +37,32 @@
         </div>
       </v-timeline-item>
     </v-timeline>
+    <v-timeline v-else align-top dense >
+      <v-timeline-item v-for="(year, i) in years" :key="i" :color="year.color" >
+        <span
+            :class="`headline font-weight-bold ${year.color}--text`"
+            v-text="year.year"
+          ></span>
+          <div class="py-4">
+          <h2 :class="`headline font-weight-light mb-4 ${year.color}--text`" data-cursor-hover>
+            {{year.title}}
+          </h2>
+          <div>
+            <v-icon :color="year.color">
+              {{year.icon}}
+            </v-icon>
+            {{year.location}} 
+            <p style="font-size: 0.9rem;" :class="`font-weight-bold ${year.color}--text`">{{year.duration}}</p>
+          </div>
+          <div :style="'font-size:0.9rem; text-align:'+ year.justify +';'">
+            <p v-for = "(desc, i) in year.description" :key="i">
+              {{desc}}
+            </p>
+          </div>
+        </div>
+        
+      </v-timeline-item>
+    </v-timeline>
   </div>
 </div>
   </template>
@@ -44,7 +70,21 @@
   <script>
     export default {
         name: 'ExperienceVue',
+        mounted() {
+          if (this.$vuetify.breakpoint.name === 'sm' || this.$vuetify.breakpoint.name === 'xs') {
+            this.isRenderTimeline1 = false
+            document.getElementsByClassName('divWidth')[0].style.margin = '0 0px';
+            document.getElementsByClassName('divWidth')[0].style.marginRight = '50px'
+            document.getElementsByClassName('seconda')[0].innerHTML = 'Experience'
+            document.getElementsByTagName('h1')[4].style.padding = '0'
+            document.getElementsByTagName('h1')[4].style.paddingLeft = '5px'
+            document.getElementsByTagName('h1')[4].style.fontSize = '3rem'
+          } else {
+            this.isRenderTimeline1 = true
+          }
+        },
       data: () => ({
+        isRenderTimeline1: true,
         years: [
           {
             color: 'cyan',
@@ -81,18 +121,30 @@
     }
   </script>
   <style>
-        .text-primary {
+     @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+        .prima {
         font-weight: 900;
         font-style: normal;
         color: #8CF2D8;
         margin-right: 12px;
         padding-right: 12px;
     }
-    .text-secondary{
+    .seconda{
         font-weight: 900;
         font-style: normal;
         margin-left: 12px;
         padding-left: 12px;
         color: #009688;
+    }
+    .divWidth {
+      margin: 0px 100px
+    }
+    .mainheader {
+      text-align:right;padding-right:13%;font-size: 5rem;
+    }
+    h1{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-size: 5rem;
     }
   </style>

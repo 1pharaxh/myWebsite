@@ -1,10 +1,11 @@
 <template>
     <div style="text-align:center; padding-top: 15%;">
       <!-- <cursor-fx  color='#1DE9B6' color-hover='#FF8A65'/> -->
-      <h1 style="text-align:left;padding-left:10%">
-          <p><span class="text-primary" data-cursor-hover>My<span class="text-secondary" data-cursor-hover>Projects...</span></span></p>
+      <h1 class="header">
+          <p><span class="text-primary" data-cursor-hover>My<span class="text-secondary project" data-cursor-hover>Projects...</span></span></p>
       </h1>
       <v-divider></v-divider>
+      <br/>
       <div class="grid-container">
           <div id="content"  v-for="(card, index) in cards" :key="index" style="text-align:center;">
             <Card data-cursor-hover :title="card.title" myColor="green" 
@@ -28,6 +29,20 @@
       name: 'ProjectsVue',
       components: {
         Card
+      },
+      mounted() {
+        if (this.$vuetify.breakpoint.name === 'sm' || this.$vuetify.breakpoint.name === 'xs') {
+          document.getElementsByClassName('header')[1].style.fontSize = '3rem'
+  //         display: grid;
+  // grid-auto-flow: column;
+  // grid-template-rows: auto;
+  // text-align: center;
+  // width: 80%;
+  // margin:auto;
+          document.getElementsByClassName('project')[0].innerHTML = 'Projects'
+          document.getElementsByClassName('grid-container')[0].style.display = 'block'
+          document.getElementsByClassName('grid-container')[0].style.width = '100%'
+        }
       },
       data () {
         const cards = [
@@ -137,6 +152,9 @@
     })
   </script>
   <style scoped>
+    .header{
+      text-align:left;padding-left:10%;font-size:5rem
+    }
      h1{
         font-family: 'Ubuntu';
         font-style: normal;
