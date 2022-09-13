@@ -90,7 +90,7 @@
             color: 'cyan',
             duration: 'Jun 2022 - Aug 2022',
             year: '2022',
-            title: 'Junior Software Developer',
+            title: 'Web Development Intern',
             location: 'Edmonton, AB',
             icon: 'mdi-map-marker-outline', 
             justify: 'start',
