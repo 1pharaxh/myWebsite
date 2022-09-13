@@ -13,7 +13,7 @@
             :content="card.content" >
             <v-chip style="padding-right:5px; margin-bottom:10px; margin-right:10px" v-for='(chip, index) in card.chips' :key="index" @click="handleClick(chip.src)" pill outlined class="ma-2" color="success">
               <v-avatar left style="padding-left: 10px">
-                <img :src='"./../../public/assets/logos/"+chip.src + ".svg"'   />
+                <img :src='"./../../public/assets/logos/"+chip.src + ".svg"' :alt="chip.src+'.svg'" />
               </v-avatar>
               {{chip.text}}
             </v-chip>

@@ -10,6 +10,7 @@
     <div style="width: 70%; margin:auto">
     <img 
         v-for="(skill, index) in skills" :key="index"
+        :alt="skill +'.svg'"
         :ref="skill"
         data-cursor-hover 
         :src='"./../../public/assets/logos/"+skill+".svg"'

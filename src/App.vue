@@ -21,9 +21,9 @@
         </svg>
     </div>
     <ul class="list-items">
-      <li data-cursor-hover class="li2 li" @click="scrollTo('skills')"><a class="text1" style="cursor:none">skills</a></li>
-      <li data-cursor-hover class="li3 li" @click="scrollTo('projects')"><a class="text1" style="cursor:none">projects</a></li>
-      <li data-cursor-hover class="li4 li" @click="scrollTo('experience')"><a class="text1" style="cursor:none">experience</a></li>
+      <li data-cursor-hover class="li2 li" @click="scrollTo('skills')"><a href="#0" class="text1" style="cursor:none">skills</a></li>
+      <li data-cursor-hover class="li3 li" @click="scrollTo('projects')"><a href="#0" class="text1" style="cursor:none">projects</a></li>
+      <li data-cursor-hover class="li4 li" @click="scrollTo('experience')"><a href="#0" class="text1" style="cursor:none">experience</a></li>
       <li data-cursor-hover class="li5 li" ><a class="text1" style="cursor:none" href="https://docs.google.com/document/d/1IPAktbFm57QjJSAWZYHMPRrtYsPlLtfH734NLS8iLbc/edit?usp=sharing" >Resume</a></li>
     </ul>
     <div class="social">
