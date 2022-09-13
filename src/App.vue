@@ -108,6 +108,7 @@
         document.getElementsByClassName('list-items')[0].style.top = '0px'
         document.getElementsByClassName('ulContainer')[0].style.padding = 0
         document.getElementsByClassName('ulContainer')[0].style.margin = '0 auto'
+        document.getElementsByClassName('ulContainer')[0].style.marginBottom = '50px'
       }
         var btns = Array.from(document.querySelectorAll('.button'));
         var tl = gsap.timeline({paused: "true"});
@@ -313,7 +314,7 @@
     position: absolute;
     bottom: 0;
     display: flex;
-    height: 80px;
+    height: 150px;
     width: 100%;
   }
   
