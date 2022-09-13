@@ -27,7 +27,7 @@
       <li data-cursor-hover class="li5 li" ><a class="text1" style="cursor:none" href="https://docs.google.com/document/d/1IPAktbFm57QjJSAWZYHMPRrtYsPlLtfH734NLS8iLbc/edit?usp=sharing" >Resume</a></li>
     </ul>
     <div class="social">
-      <ul>
+      <ul class="ulContainer">
         <li data-cursor-hover class="social-li"><a style="cursor:none" href='https://www.linkedin.com/in/akarshan-mishra-75577122a/'>linkedIn</a></li>
         <li data-cursor-hover class="social-li"><a style="cursor:none" href='https://github.com/1pharaxh'>GitHub</a></li>
         <li data-cursor-hover class="social-li"><a style="cursor:none" href="mailto:akarshan@ualberta.ca">Email</a></li>
@@ -106,7 +106,8 @@
           }
         }
         document.getElementsByClassName('list-items')[0].style.top = '0px'
-        document.getElementsByClassName('social-li')[2].style.margin = '0'
+        document.getElementsByClassName('ulContainer')[0].style.padding = 0
+        document.getElementsByClassName('ulContainer')[0].style.margin = '0 auto'
       }
         var btns = Array.from(document.querySelectorAll('.button'));
         var tl = gsap.timeline({paused: "true"});

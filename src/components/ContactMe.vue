@@ -32,7 +32,7 @@
 <script>
     import { gsap } from 'gsap';
 export default {
-    data: () => ({ textCount: 4, numRows: 4 }),
+    data: () => ({ textCount: 4, numRows: 5 }),
     mounted() {
         const { contact, contactEmailRow } = this.$refs;
         if (this.$vuetify.breakpoint.name === 'sm' || this.$vuetify.breakpoint.name === 'xs') {
@@ -47,8 +47,8 @@ export default {
                     document.getElementsByClassName('contact__email__row')[i].style.lineHeight = '0.3'
                 }
             }
-            console.log(document.getElementsByClassName('contact__email').style)
-            document.getElementsByClassName('contact__email')[0].style.padding = '0'
+            document.getElementsByClassName('contact__email')[0].style.padding = '0px'
+            document.getElementsByClassName('contact__email')[0].style.margin = '0px'
         }
         gsap.fromTo(
             contactEmailRow,
@@ -65,8 +65,9 @@ export default {
         });
         contactEmailRow.forEach((item) => {
             const scrollTrigger = scrollTriggerFactory(item);
+            const offset =  this.$vuetify.breakpoint.name === 'sm' || this.$vuetify.breakpoint.name === 'xs' ? 700 : 0
             const sumWidth =
-                item.offsetWidth +
+                item.offsetWidth + offset +
                 window.innerWidth / (window.innerWidth < 700 ? 2 : 4);
             gsap.fromTo(
                 item,
@@ -81,7 +82,7 @@ export default {
 <style lang="scss">
 .contact {
     background-color: white;
-    padding: 4rem 0 8rem;
+    padding: 2rem 0 4rem;
     pointer-events: all;
     max-width: 100vw;
     margin-top: -2px;
