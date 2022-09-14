@@ -105,7 +105,8 @@
             arr2[i].style.fontSize = '2rem'
           }
         }
-        document.getElementsByClassName('list-items')[0].style.top = '0px'
+        document.getElementsByClassName('list-items')[0].style.top = '16%'
+        document.getElementsByClassName('list-items')[0].style.justifyContent = 'start'
         document.getElementsByClassName('ulContainer')[0].style.padding = 0
         document.getElementsByClassName('ulContainer')[0].style.margin = '0 auto'
         document.getElementsByClassName('ulContainer')[0].style.marginBottom = '50px'
