@@ -28,7 +28,7 @@
     </ul>
     <div class="social">
       <ul class="ulContainer">
-        <li data-cursor-hover class="social-li"><a style="cursor:none" href='https://www.linkedin.com/in/akarshan-mishra-75577122a/'>linkedIn</a></li>
+        <li data-cursor-hover class="social-li"><a style="cursor:none" href='https://www.linkedin.com/in/akarshan-m-75577122a/'>linkedIn</a></li>
         <li data-cursor-hover class="social-li"><a style="cursor:none" href='https://github.com/1pharaxh'>GitHub</a></li>
         <li data-cursor-hover class="social-li"><a style="cursor:none" href="mailto:akarshan@ualberta.ca">Email</a></li>
       </ul>
