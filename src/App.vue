@@ -110,6 +110,9 @@
         document.getElementsByClassName('ulContainer')[0].style.padding = 0
         document.getElementsByClassName('ulContainer')[0].style.margin = '0 auto'
         document.getElementsByClassName('ulContainer')[0].style.marginBottom = '50px'
+        document.getElementsByClassName('centered')[0].style.fontSize = '0'
+        document.getElementsByClassName('centered')[1].style.fontSize = '0'
+        document.getElementsByClassName('centered')[2].style.fontSize = '0'
       }
         var btns = Array.from(document.querySelectorAll('.button'));
         var tl = gsap.timeline({paused: "true"});

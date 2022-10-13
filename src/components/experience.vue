@@ -84,7 +84,6 @@
             document.getElementsByClassName('divWidth')[0].style.margin = '0 0px';
             document.getElementsByClassName('divWidth')[0].style.marginRight = '50px'
             document.getElementsByClassName('seconda')[0].innerHTML = 'Experience'
-            document.getElementsByClassName('centered')[0].style.fontSize = '0'
             document.getElementsByTagName('h1')[4].style.padding = '0'
             document.getElementsByTagName('h1')[4].style.paddingLeft = '5px'
             document.getElementsByTagName('h1')[4].style.fontSize = '3rem'
