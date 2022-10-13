@@ -3,7 +3,7 @@
   <div style="text-align:center; padding-top: 15%;" >
     <!-- <cursor-fx  color='#1DE9B6' color-hover='#FF8A65'/> -->
     <h1 class="header">
-        <p><span class="prime" data-cursor-hover>My<span class="second skills" data-cursor-hover>Skills...</span></span></p>
+        <p class="contain"><span class="prime" data-cursor-hover>My<span class="second skills" data-cursor-hover>Skills...</span></span><span class="centered">SKILLS</span></p>
     </h1>
     <v-divider></v-divider>
     <br/>
@@ -156,7 +156,20 @@
     }
     .header{
         font-size: 5rem;
-        text-align:right;
-        padding-right:15%
+        text-align:center;
     }
+    .contain {
+      position: relative;
+    }
+    .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #8CF2D8;
+  font-size: 200px;
+  opacity: 20%;
+}
 </style>

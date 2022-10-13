@@ -2,7 +2,7 @@
     <div style="text-align:center; padding-top: 15%;">
       <!-- <cursor-fx  color='#1DE9B6' color-hover='#FF8A65'/> -->
       <h1 class="header">
-          <p><span class="text-primary" data-cursor-hover>My<span class="text-secondary project" data-cursor-hover>Projects...</span></span></p>
+          <p class="contain"><span class="text-primary" data-cursor-hover>My<span class="text-secondary project" data-cursor-hover>Projects...</span></span><span class="centered">PROJECTS</span></p>
       </h1>
       <v-divider></v-divider>
       <br/>
@@ -153,7 +153,7 @@
   </script>
   <style scoped>
     .header{
-      text-align:left;padding-left:10%;font-size:5rem
+      text-align:center;font-size:5rem;
     }
      h1{
         font-family: 'Ubuntu';
@@ -185,5 +185,19 @@
         padding-left: 12px;
         color: #009688;
     }
+    .contain {
+      position: relative;
+    }
+    .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #8CF2D8;
+  font-size: 200px;
+  opacity: 20%;
+}
   </style>
   

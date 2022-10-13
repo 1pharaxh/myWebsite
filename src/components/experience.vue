@@ -1,8 +1,8 @@
 <template>
           <div style="text-align:center; padding-top: 15%;">
     <!-- <cursor-fx  color='#1DE9B6' color-hover='#FF8A65'/> -->
-    <h1 class="mainHeader">
-        <p><span class="prima" data-cursor-hover>My<span class="seconda" data-cursor-hover>Experience...</span></span></p>
+    <h1 class="mainheader">
+        <p class="contain"><span class="prima" data-cursor-hover>My<span class="seconda" data-cursor-hover>Experience...</span></span><span class="centered">EXPERIENCE</span></p>
     </h1>
     <v-divider></v-divider>
     <div class="divWidth">
@@ -24,9 +24,13 @@
             {{year.title}}
           </h2>
           <div>
+            <p style="margin-bottom:2;font-size: 1.4rem;" :class="`font-weight-bold ${year.color}--text`">
+              {{year.company}}
+            </p>
             <v-icon :color="year.color">
               {{year.icon}}
             </v-icon>
+            
             {{year.location}} <span style="padding-left: 30px;font-size: 0.9rem;" :class="`font-weight-bold ${year.color}--text`">{{year.duration}}</span>
           </div>
           <div :style="'font-size:0.9rem; text-align:'+ year.justify +';'">
@@ -47,11 +51,15 @@
           <h2 :class="`headline font-weight-light mb-4 ${year.color}--text`" data-cursor-hover>
             {{year.title}}
           </h2>
+
           <div>
+            <p style="margin-bottom:2;font-size: 1.4rem;" :class="`font-weight-bold ${year.color}--text`">
+              {{year.company}}
+            </p>
             <v-icon :color="year.color">
               {{year.icon}}
             </v-icon>
-            {{year.location}} 
+            {{year.location}}
             <p style="font-size: 0.9rem;" :class="`font-weight-bold ${year.color}--text`">{{year.duration}}</p>
           </div>
           <div :style="'font-size:0.9rem; text-align:'+ year.justify +';'">
@@ -76,6 +84,7 @@
             document.getElementsByClassName('divWidth')[0].style.margin = '0 0px';
             document.getElementsByClassName('divWidth')[0].style.marginRight = '50px'
             document.getElementsByClassName('seconda')[0].innerHTML = 'Experience'
+            document.getElementsByClassName('centered')[0].style.fontSize = '0'
             document.getElementsByTagName('h1')[4].style.padding = '0'
             document.getElementsByTagName('h1')[4].style.paddingLeft = '5px'
             document.getElementsByTagName('h1')[4].style.fontSize = '3rem'
@@ -87,8 +96,9 @@
         isRenderTimeline1: true,
         years: [
           {
+            company: 'GreyJay Energy',
             color: 'cyan',
-            duration: 'Jun 2022 - Aug 2022',
+            duration: '06/2022 - 08/2022',
             year: '2022',
             title: 'Web Development Intern',
             location: 'Edmonton, AB',
@@ -102,8 +112,9 @@
             ],
           },
           {
+            company: 'Better Drones',
             color: 'green',
-            duration: 'Oct 2022 - Jan 2019',
+            duration: '10/2018 - 01/2019',
             year: '2018',
             title: 'Drone Engineering Intern',
             location: 'Noida, India',
@@ -140,11 +151,25 @@
       margin: 0px 100px
     }
     .mainheader {
-      text-align:right;padding-right:13%;font-size: 5rem;
+      text-align:center;font-size: 5rem;
     }
     h1{
         font-family: 'Ubuntu';
         font-style: normal;
         font-size: 5rem;
     }
+    .contain {
+      position: relative;
+    }
+    .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #8CF2D8;
+  font-size: 200px;
+  opacity: 20%;
+}
   </style>
