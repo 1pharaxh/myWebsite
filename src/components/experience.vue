@@ -103,6 +103,7 @@
             location: 'Edmonton, AB',
             icon: 'mdi-map-marker-outline', 
             justify: 'start',
+            
             description: [
               '● Led the frontend development and design for a hybrid (Android & iOS) app using Ionic, Vue & Google Cloud with a focus on test-driven development, future extensibility, and ease of adoption.', 
               '● Increased session length by 3 minutes by designing and implementing modular-frontend components using Vue and JavaScript.',
