@@ -104,10 +104,11 @@
             icon: 'mdi-map-marker-outline', 
             justify: 'start',
             description: [
-              '● Created responsive client facing VueJs UI components.', 
-              '● Integrated a ML persistent approach using Keras in the python data processing pipeline.',
-              '● Led the frontend development of companies’ upcoming hybrid (Android and iOS) app using Ionic framework and VueJs and other JS libraries along with 3rd party APIs and Google Cloud integration.',
-              '● Bug fixes and scaling on existing webapp based on Vue.'
+              '● Led the frontend development and design for a hybrid (Android & iOS) app using Ionic, Vue & Google Cloud with a focus on test-driven development, future extensibility, and ease of adoption.', 
+              '● Increased session length by 3 minutes by designing and implementing modular-frontend components using Vue and JavaScript.',
+              '● Decreased production build response time by 30% by automating data extraction in the data processing pipeline by using Python and Tabula, which processes over 8000 monthly scraping operations.',
+              '● Developed a scalable RESTful API service using Node & Express allowing downloadable PDF on the client side, addressing high reliability; Implementation led to faster PDF generation by 50%.',
+              '● Implemented a customized Linear regression model in the data processing pipeline to predict future costs.'
             ],
           },
           {
