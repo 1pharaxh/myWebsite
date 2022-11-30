@@ -21,7 +21,7 @@
                     aria-hidden="true"
                     class="contact__email__row__text"
                 >
-                    Shoot me an <span style="color:#009688" class="serif">email</span
+                    Send me an <span style="color:#009688" class="serif">Email</span
                     ><span v-if="textKey !== textCount">&nbsp; - &nbsp;</span>
                 </span>
             </span>

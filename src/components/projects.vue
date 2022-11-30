@@ -47,9 +47,9 @@
       data () {
         const cards = [
           {
-            title: 'Portfolio',
-            link: 'https://ghbtns.com/github-btn.html?user=1pharaxh&repo=my_website&type=star&count=true&size=large',
-            content: 'A personal portfolio website developed using VueJs alongside Vuetify for material design and ThreeJs for 3d animations.',
+            title: 'ASLingo',
+            link: 'https://ghbtns.com/github-btn.html?user=1akarshan&repo=hacked-beta&type=star&count=true&size=large',
+            content: 'An android app that uses AI to help users practice their American Sign Language (ASL) skills.',
             chips: [
               {
                 src: 'vuejs-cropped',
