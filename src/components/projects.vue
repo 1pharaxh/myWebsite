@@ -52,7 +52,7 @@
             content: 'An android app that uses AI to help users practice their American Sign Language (ASL) skills.',
             chips: [
               {
-                src: 'vuejs-cropped',
+                src: 'ionic-cropped',
                 text: 'Ionic'
               },
               {
@@ -120,7 +120,7 @@
       methods: {
         handleClick(link) {
                 const linkMap = {
-                    'arduino': 'https://www.arduino.cc/',
+                'arduino': 'https://www.arduino.cc/',
                 'bash' : 'https://www.gnu.org/software/bash/',
                 'bootstrap' : 'https://getbootstrap.com/',
                 'capacitorjs-cropped' : 'https://capacitorjs.com/',
@@ -132,6 +132,7 @@
                 'flask-cropped': 'https://flask.palletsprojects.com/en/1.1.x/',
                 'gsap-greensock-cropped' : 'https://greensock.com/gsap/',
                 'html-cropped' : 'https://www.w3.org/html/',
+                'ionic-cropped' : 'https://ionicframework.com/',
                 'javascript-cropped' : 'https://www.javascript.com/',
                 'linux-tux-cropped' : 'https://www.linux.org/',
                 'mongodb-cropped' : 'https://www.mongodb.com/',
