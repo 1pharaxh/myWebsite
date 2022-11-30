@@ -94,7 +94,7 @@
             };
             return {
                 BASE_CONFIG,
-                quantity: 4,
+                quantity: 3,
           canvasBgColor: "#fff"
             }
         }

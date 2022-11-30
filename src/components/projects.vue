@@ -53,19 +53,19 @@
             chips: [
               {
                 src: 'vuejs-cropped',
+                text: 'Ionic'
+              },
+              {
+                src: 'python-cropped',
+                text: 'Python'
+              },
+              {
+                src:'vuejs-cropped',
                 text: 'Vue.js'
               },
               {
-                src: 'gsap-greensock-cropped',
-                text: 'GSAP'
-              },
-              {
-                src:'vuetify-cropped',
-                text: 'Vuetify'
-              },
-              {
-                src: 'threejs-cropped',
-                text: 'ThreeJs'
+                src: 'tensorflow-cropped',
+                text: 'TensorFlow'
               }, 
             ]
           },
