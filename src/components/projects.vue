@@ -7,18 +7,21 @@
       <v-divider></v-divider>
       <br/>
       <div class="grid-container">
-          <div id="content"  v-for="(card, index) in cards" :key="index" style="text-align:center;">
+        <v-row justify="center" class="d-flex justify-center">
+
+          <v-col class="d-flex justify-center"  cols="12" md="4"  v-for="(card, index) in cards" :key="index" style="text-align:center;">
             <Card data-cursor-hover :title="card.title" myColor="green" 
             :link="card.link" 
             :content="card.content" >
-            <v-chip style="padding-right:5px; margin-bottom:10px; margin-right:10px" v-for='(chip, index) in card.chips' :key="index" @click="handleClick(chip.src)" pill outlined class="ma-2" color="success">
-              <v-avatar left style="padding-left: 10px">
-                <img :src='"./../../public/assets/logos/"+chip.src + ".svg"' :alt="chip.src+'.svg'" />
-              </v-avatar>
-              {{chip.text}}
-            </v-chip>
-          </Card>
-        </div>
+              <v-chip style="padding-right:5px; margin-bottom:10px; margin-right:10px" v-for='(chip, index) in card.chips' :key="index" @click="handleClick(chip.src)" pill outlined class="ma-2" color="success">
+                <v-avatar left style="padding-left: 10px">
+                  <img :src='"./../../public/assets/logos/"+chip.src + ".svg"' :alt="chip.src+'.svg'" />
+                </v-avatar>
+                {{chip.text}}
+              </v-chip>
+            </Card>
+          </v-col>
+          </v-row>
         </div>
     </div>
   </template>
@@ -46,7 +49,65 @@
       },
       data () {
         const cards = [
+          {    
+            title: 'QR GO',
+            link: 'https://ghbtns.com/github-btn.html?user=CMPUT301W23T10&repo=QRgo&type=star&count=true&size=large',
+            content: 'Scan QR codes for points, explore profiles, add comments, and discover hotspots in this game.',
+            chips: [
+              {
+                src: 'java-cropped',
+                text: 'Java'
+              },
+              {
+                src: 'firebase-cropped',
+                text: 'Firebase'
+              },
+            ]
+          },
+          {    
+            title: 'Anubhava',
+            link: 'https://ghbtns.com/github-btn.html?user=1pharaxh&repo=ignite&type=star&count=true&size=large',
+            content: 'Scalable internship portal for Delhi University: sign up, upload resume, browse and apply to jobs.',
+            chips: [
+              {
+                src: 'react-cropped',
+                text: 'React'
+              },
+              {
+                src: 'nodejs-cropped',
+                text: 'NodeJs'
+              },
+              {
+                src: 'mongodb-cropped',
+                text: 'MongoDb'
+              },
+              {
+                src: 'expressjs-cropped',
+                text: 'ExpressJs'
+              },
+              {
+                src: 'firebase-cropped',
+                text: 'Firebase'
+              },
+            ]
+          },
+          {    
+            title: 'Fit AI',
+            link: 'https://ghbtns.com/github-btn.html?user=fardeenfs&repo=FitAI-405FoundNow&type=star&count=true&size=large',
+            content: 'A fitness app with AI-powered workout detection. Track weekly reps, calories burned, and daily workout habits.',
+            chips: [
+              {
+                src: 'flutter-cropped',
+                text: 'Flutter'
+              },
+              {
+                src: 'tensorflow-cropped',
+                text: 'TensorFlow'
+              }, 
+            ]
+          },
           {
+
             title: 'ASLingo',
             link: 'https://ghbtns.com/github-btn.html?user=1akarshan&repo=hacked-beta&type=star&count=true&size=large',
             content: 'An android app that uses AI to help users practice their American Sign Language (ASL) skills.',
@@ -67,6 +128,11 @@
                 src: 'tensorflow-cropped',
                 text: 'TensorFlow'
               }, 
+              {
+                src: 'capacitorjs-cropped',
+                text: 'Capacitor'
+              }
+             
             ]
           },
           {
@@ -146,6 +212,7 @@
                 'typescript-cropped': 'https://www.typescriptlang.org/',
                 'vuejs-cropped': 'https://vuejs.org/',
                 'vuetify-cropped' : 'https://vuetifyjs.com/en/',
+                'flutter-cropped' : 'https://flutter.dev/',
                 }
                 window.open(linkMap[link]);
             },

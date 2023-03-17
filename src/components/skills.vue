@@ -49,11 +49,12 @@
         },
         data () {
             const skills = [
-                'arduino',
-                'bash',
-                'bootstrap',
+                'react-cropped',
+                'vuejs-cropped',
+                'vuetify-cropped',
+                'flutter-cropped',
+                'java-cropped',
                 'capacitorjs-cropped',
-                'cordova-cropped',
                 'cpp-cropped',
                 'css-cropped',
                 'expressjs-cropped',
@@ -73,8 +74,7 @@
                 'tensorflow-cropped',
                 'threejs-cropped',
                 'typescript-cropped',
-                'vuejs-cropped',
-                'vuetify-cropped',
+
             ]
                 return {imageShrunk: false, skills}
             },

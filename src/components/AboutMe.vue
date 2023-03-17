@@ -22,7 +22,7 @@
                         <p class="bottomText">I am a
                         <vue-typer
                             data-cursor-hover
-                            :text='["Web Developer", "Designer", "Developer"]'
+                            :text='["Creative", "Designer", "Developer"]'
                             :repeat='Infinity'
                             :shuffle='false'
                             initial-action='typing'
@@ -112,7 +112,7 @@
     font-family: 'Ubuntu';
     font-style: normal;
   font-weight: 700;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 .vue-typer .custom.char.typed {
     color: #009688;
@@ -143,13 +143,13 @@
   font-weight: 900;
   color:#009688;
   line-height: normal;
-    font-size: 5rem;
+    font-size: 7rem;
 }
 .bottomText {
     font-size:3rem;color:#8CF2D8;margin:0;padding:0
 }
 .upperText {
-    font-size:2rem;color:#8CF2D8;margin:0;padding:0;
+    font-size:3rem;color:#8CF2D8;margin:0;padding:0;
 }
 .mainContainer {
     text-align:center;z-index:1;
